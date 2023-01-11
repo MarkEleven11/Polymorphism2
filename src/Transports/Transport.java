@@ -1,5 +1,7 @@
 package Transports;
 
+import Exeptions.ImmposiblePassDiagnostic;
+
 public abstract class Transport implements Competing {
 
     private String brand;
@@ -78,5 +80,6 @@ public abstract class Transport implements Competing {
 
     public abstract void printType();
 
-    public abstract int diagnostic(int cases);
+    public abstract int diagnostic(int cases) throws ImmposiblePassDiagnostic;
+
 }

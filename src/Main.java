@@ -5,12 +5,13 @@ import Drivers.DriverD;
 import Enumerations.BodyType;
 import Enumerations.Capacity;
 import Enumerations.LoadCapacity;
+import Exeptions.ImmposiblePassDiagnostic;
 import Transports.Bus;
 import Transports.Cargo;
 import Transports.Passanger;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ImmposiblePassDiagnostic {
 
 
         Bus scania = new Bus("Scania", "Touring", 13.0, Capacity.XL);

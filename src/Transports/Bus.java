@@ -30,8 +30,8 @@ public class Bus extends Transport {
     }
 
     @Override
-        public int diagnostic(int cases){
-            throw new ImmposiblePassDiagnostic("Автобусы не могут проходить диагностику");
+        public int diagnostic(int cases) throws ImmposiblePassDiagnostic {
+            throw new ImmposiblePassDiagnostic("Автобусы не могут проходить диагностику", this);
         }
 
 }
