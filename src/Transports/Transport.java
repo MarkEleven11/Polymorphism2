@@ -1,6 +1,6 @@
 package Transports;
 
-public class Transport implements Competing {
+public abstract class Transport implements Competing {
 
     private String brand;
 
@@ -75,4 +75,6 @@ public class Transport implements Competing {
         System.out.println(getBrand() + " " + getModel() + " - максимальная скорость " + speed + " километров в час.");
         return 0;
     }
+
+    public abstract void printType();
 }
