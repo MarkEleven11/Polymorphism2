@@ -23,7 +23,18 @@ public class Bus extends Transport {
     public void printType() {
         if (capacity == null) {
             System.out.println("Данных недостаточно");
-        } else System.out.println("Вместимость автобуса " + getBrand() + " " + getModel() + " составляет от " + capacity.getSeatsNumberMin() + " до " +
-                capacity.getGetSeatsNumberMax() +" человек." );
+        } else
+            System.out.println("Вместимость автобуса " + getBrand() + " " + getModel() + " составляет от " + capacity.getSeatsNumberMin() + " до " +
+                    capacity.getGetSeatsNumberMax() + " человек.");
     }
+
+    @Override
+        public int diagnostic(int cases){
+            if (cases >= 0) {
+                System.out.println("Автобусам диагностика не требуется");
+            } else System.out.println("Автобусам диагностика не требуется");
+            return cases;
+        }
+
 }
+

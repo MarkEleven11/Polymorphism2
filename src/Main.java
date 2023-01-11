@@ -83,6 +83,9 @@ public class Main {
         hyndai.printType();
         freighliner.printType();
         System.out.println();
-
+        ///Проверка метода Диагностика
+        mercedes.diagnostic(0);
+        kamaz.diagnostic(-5);
+        toyota.diagnostic(41);
     }
 }

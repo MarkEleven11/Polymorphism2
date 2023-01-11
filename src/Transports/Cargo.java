@@ -27,5 +27,13 @@ public class Cargo extends Transport {
                 getLoadCapacity().getHigh() + " тонн.");
     }
 
+    @Override
+    public int diagnostic(int cases){
+        if (cases >= 0) {
+            System.out.println(getBrand() + " " + getModel() +" диагностика не требуется");
+        } else System.out.println(getBrand() + " " + getModel() + " требуется пройти диагностику");
+        return cases;
+    }
+
 }
 

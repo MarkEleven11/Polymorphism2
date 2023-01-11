@@ -26,4 +26,12 @@ public class Passanger extends Transport{
         } else System.out.println("Тип кузова автомобиля " + getBrand() + " " + getModel() + " - " + getBodyType());
 
     }
+
+    @Override
+    public int diagnostic(int cases){
+        if (cases >= 0) {
+            System.out.println(getBrand() + " " + getModel() +" диагностика не требуется");
+        } else System.out.println(getBrand() + " " + getModel() + " требуется пройти диагностику");
+        return cases;
+    }
 }

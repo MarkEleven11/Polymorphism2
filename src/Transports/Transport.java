@@ -77,4 +77,6 @@ public abstract class Transport implements Competing {
     }
 
     public abstract void printType();
+
+    public abstract int diagnostic(int cases);
 }
