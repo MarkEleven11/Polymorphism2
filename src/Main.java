@@ -70,7 +70,7 @@ public class Main {
         tom.toRace(freighliner);
         rayan.toRace(skoda);
         System.out.println();
-        ///Проверяем метод printType с исключениями.
+        ///Проверяем метод printType с Enum.
         scania.printType();
         maz.printType();
         mercedes.printType();
