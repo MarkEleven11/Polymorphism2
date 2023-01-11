@@ -1,6 +1,7 @@
 package Transports;
 
 import Enumerations.Capacity;
+import Exeptions.ImmposiblePassDiagnostic;
 
 public class Bus extends Transport {
 
@@ -30,10 +31,7 @@ public class Bus extends Transport {
 
     @Override
         public int diagnostic(int cases){
-            if (cases >= 0) {
-                System.out.println("Автобусам диагностика не требуется");
-            } else System.out.println("Автобусам диагностика не требуется");
-            return cases;
+            throw new ImmposiblePassDiagnostic("Автобусы не могут проходить диагностику");
         }
 
 }

@@ -65,10 +65,9 @@ public class Main {
         Driver<Cargo> tom = new Driver<>("Tom Hardy", true,18, freighliner);
         Driver<Bus> keanu = new Driver<>("Keanu Reeves", true,21, mercedes);
         Driver<Passanger> rayan = new Driver<>("Rayan Gosling", true, 15, bmw);
-        rayan.toRace(bmw);
-        keanu.toRace(mercedes);
-        tom.toRace(freighliner);
-        rayan.toRace(skoda);
+        rayan.toRace();
+        keanu.toRace();
+        tom.toRace();
         System.out.println();
         ///Проверяем метод printType с Enum.
         scania.printType();
@@ -87,5 +86,6 @@ public class Main {
         mercedes.diagnostic(0);
         kamaz.diagnostic(-5);
         toyota.diagnostic(41);
+
     }
 }

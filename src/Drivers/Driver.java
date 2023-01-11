@@ -51,7 +51,10 @@ public class Driver <T extends Transport> {
         System.out.println(getsFM() +  " - останавливает автомобиль, засовывает пистолет, оплачивает, вытаскивает пистолет, уезжает.");
     }
 
-    public void toRace(T machine) {
+    public void toRace() {
         System.out.println("Водитель " + getsFM() + " управляет автомобилем " + getMachine() + " и будет учавствовать в заезде.");
     }
+
+
+
 }
