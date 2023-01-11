@@ -1,3 +1,7 @@
+import Drivers.Driver;
+import Drivers.DriverB;
+import Drivers.DriverC;
+import Drivers.DriverD;
 import Transports.Bus;
 import Transports.Cargo;
 import Transports.Passanger;
@@ -42,6 +46,31 @@ public class Main {
         mercedes.bestTime(12.48);
         maz.maxSpeed(92);
         System.out.println();
+        ///Проводим проверку класса водитель и проверку методов
+        DriverB gosling = new DriverB("Rayan 'Drive' Gosling", true, 15, "");
+        DriverC hardy = new DriverC("Tom 'MadMax' Hardy", true, 18, "");
+        DriverD reeves = new DriverD("Keanu 'Speed' Reeves", true, 21, "");
+        System.out.println(gosling);
+        System.out.println(hardy);
+        System.out.println(reeves);
+        System.out.println();
+        gosling.refuel();
+        hardy.movement();
+        reeves.stop();
+        System.out.println();
+        ///Проверяем полиморфизм в конструкторе водителя и транспорта
+        Driver<Cargo> tom = new Driver<>("Tom Hardy", true,18, freighliner);
+        Driver<Bus> keanu = new Driver<>("Keanu Reeves", true,21, mercedes);
+        Driver<Passanger> rayan = new Driver<>("Rayan Gosling", true, 15, bmw);
+        rayan.toRace(bmw);
+        keanu.toRace(mercedes);
+        tom.toRace(freighliner);
+        rayan.toRace(skoda);
+
+
+
+
+
 
     }
 }
