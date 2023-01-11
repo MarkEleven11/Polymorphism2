@@ -33,7 +33,15 @@ public class Main {
         ///Проверяем методы стоп и начать движение
         scania.movement();
         skoda.stop();
-
+        System.out.println();
+        ///Проверяем имплементированные методы
+        bmw.pitStop(12);
+        skoda.pitStop(20);
+        toyota.pitStop(31);
+        kamaz.pitStop(42);
+        mercedes.bestTime(12.48);
+        maz.maxSpeed(92);
+        System.out.println();
 
     }
 }

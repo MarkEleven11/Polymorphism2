@@ -1,6 +1,6 @@
 package Transports;
 
-public class Transport {
+public class Transport implements Competing {
 
     private String brand;
 
@@ -48,5 +48,31 @@ public class Transport {
 
     public void stop() {
         System.out.println(getBrand() + " " + getModel() + " - остановить автомобиль, заглушить двигатель, поставить на ручник.");
+    }
+    /// Имплементируем методы
+    @Override
+    public int pitStop(int numberOfLap) {
+        if (numberOfLap <= 30 && numberOfLap % 10 != 0) {
+            System.out.println(getBrand() + " " + getModel() + " продолжает движение");
+        } else if (numberOfLap == 31) {
+            System.out.println(getBrand() + " " + getModel() + " финишировал");
+        } else if (numberOfLap > 31) {
+            System.out.println("Для " + getBrand() + " " + getModel() + " гонка давно закончилась.");
+        } else {
+            System.out.println(getBrand() + " " + getModel() + " выходит на питстоп");
+        }
+        return numberOfLap;
+    }
+
+    @Override
+    public double bestTime(double time) {
+        System.out.println(getBrand() + " " + getModel() + " - лучшее время " + time + " минут.");
+        return 0;
+    }
+
+    @Override
+    public int maxSpeed(int speed) {
+        System.out.println(getBrand() + " " + getModel() + " - максимальная скорость " + speed + " километров в час.");
+        return 0;
     }
 }
