@@ -82,4 +82,8 @@ public abstract class Transport implements Competing {
 
     public abstract int diagnostic(int cases) throws ImmposiblePassDiagnostic;
 
+    public void infoAboutVechicle() {
+        System.out.println("У водителя ");
+    }
+
 }

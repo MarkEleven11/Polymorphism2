@@ -1,6 +1,7 @@
 package Transports;
 
 import Enumerations.BodyType;
+import Exeptions.ImmposiblePassDiagnostic;
 
 public class Passanger extends Transport{
 
@@ -28,7 +29,7 @@ public class Passanger extends Transport{
     }
 
     @Override
-    public int diagnostic(int cases){
+    public int diagnostic(int cases) throws ImmposiblePassDiagnostic {
         if (cases >= 0) {
             System.out.println(getBrand() + " " + getModel() +" диагностика не требуется");
         } else System.out.println(getBrand() + " " + getModel() + " требуется пройти диагностику");

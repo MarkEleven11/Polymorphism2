@@ -1,5 +1,6 @@
 package Drivers;
 
+import MechanicsWorkers.Mechanics;
 import Transports.Transport;
 
 public class Driver <T extends Transport> {
@@ -54,7 +55,5 @@ public class Driver <T extends Transport> {
     public void toRace() {
         System.out.println("Водитель " + getsFM() + " управляет автомобилем " + getMachine() + " и будет учавствовать в заезде.");
     }
-
-
 
 }

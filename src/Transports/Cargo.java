@@ -1,6 +1,7 @@
 package Transports;
 
 import Enumerations.LoadCapacity;
+import Exeptions.ImmposiblePassDiagnostic;
 
 public class Cargo extends Transport {
 
@@ -28,7 +29,7 @@ public class Cargo extends Transport {
     }
 
     @Override
-    public int diagnostic(int cases){
+    public int diagnostic(int cases) throws ImmposiblePassDiagnostic {
         if (cases >= 0) {
             System.out.println(getBrand() + " " + getModel() +" диагностика не требуется");
         } else System.out.println(getBrand() + " " + getModel() + " требуется пройти диагностику");

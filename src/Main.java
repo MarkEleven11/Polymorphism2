@@ -6,12 +6,17 @@ import Enumerations.BodyType;
 import Enumerations.Capacity;
 import Enumerations.LoadCapacity;
 import Exeptions.ImmposiblePassDiagnostic;
+import Exeptions.NoAccesExeption;
+import MechanicsWorkers.Mechanics;
 import Transports.Bus;
 import Transports.Cargo;
 import Transports.Passanger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
-    public static void main(String[] args) throws ImmposiblePassDiagnostic {
+    public static void main(String[] args) throws ImmposiblePassDiagnostic, NoAccesExeption {
 
 
         Bus scania = new Bus("Scania", "Touring", 13.0, Capacity.XL);
@@ -51,9 +56,9 @@ public class Main {
         maz.maxSpeed(92);
         System.out.println();
         ///Проводим проверку класса водитель и проверку методов
-        DriverB gosling = new DriverB("Rayan 'Drive' Gosling", true, 15, "");
-        DriverC hardy = new DriverC("Tom 'MadMax' Hardy", true, 18, "");
-        DriverD reeves = new DriverD("Keanu 'Speed' Reeves", true, 21, "");
+        DriverB gosling = new DriverB("Rayan 'Drive' Gosling", true, 15, "B");
+        DriverC hardy = new DriverC("Tom 'MadMax' Hardy", true, 18, "C");
+        DriverD reeves = new DriverD("Keanu 'Speed' Reeves", true, 21, "D");
         System.out.println(gosling);
         System.out.println(hardy);
         System.out.println(reeves);
@@ -84,9 +89,18 @@ public class Main {
         freighliner.printType();
         System.out.println();
         ///Проверка метода Диагностика
-        mercedes.diagnostic(0);
-        kamaz.diagnostic(-5);
-        toyota.diagnostic(41);
+//        mercedes.diagnostic(0);
+//        kamaz.diagnostic(-5);
+//        toyota.diagnostic(41);
+        try {
+            new DriverB("Mark Eleven", true, 2, " ");
+        } catch (NoAccesExeption e) {
+            System.out.println(e.getMessage());
+        }
+
+        List<Mechanics> list = new ArrayList<>();
+        Mechanics statham = new Mechanics("Jason Stathem", "BadCompany");
+
 
     }
 }
