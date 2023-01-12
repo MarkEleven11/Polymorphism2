@@ -1,20 +1,21 @@
 package MechanicsWorkers;
 
 import Drivers.Driver;
+import Transports.Bus;
 import Transports.Passanger;
 import Transports.Transport;
 
-public class Mechanics <M,T extends Driver> {
+public class Mechanics <M extends Driver> {
     private String nameSurname;
     private String company;
-    private M vechicle;
-    private T racer;
+    private M racer;
+    private Transport transport;
 
-    public Mechanics(String nameSurname, String company, M vechicle, T racer) {
+    public Mechanics(String nameSurname, String company, M racer, Transport transport) {
         this.nameSurname = nameSurname;
         this.company = company;
-        this.vechicle = vechicle;
         this.racer = racer;
+        this.transport = transport;
 
     }
 
@@ -34,29 +35,28 @@ public class Mechanics <M,T extends Driver> {
         this.company = company;
     }
 
-    public M getVechicle() {
-        return vechicle;
-    }
-
-    public void setVechicle(M vechicle) {
-        this.vechicle = vechicle;
-    }
-
-    public T getRacer() {
+    public M getRacer() {
         return racer;
     }
 
-    public void setRacer(T racer) {
+    public void setRacer(M racer) {
         this.racer = racer;
     }
 
+    public Transport getTransport() {
+        return transport;
+    }
 
-     public String toString () {
+    public void setTransport(Transport transport) {
+        this.transport = transport;
+    }
+
+    public String toString () {
         return "Механик " + getNameSurname() + " от компании " + getCompany();
     }
 
 
-    public void infoAboutVechicle() {
-        System.out.println("У водителя ");
+    public void infoAbout() {
+        System.out.println(getRacer() + " имеет автомобиль " + getTransport() + ", который обслуживает механик " + getNameSurname());
     }
 }

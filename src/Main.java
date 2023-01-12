@@ -120,9 +120,9 @@ public class Main {
         System.out.println();
 
         ///Работа с коллекциями ArrayList
-        Mechanics statham = new Mechanics("Jason Stathem", "BadCompany", gosling, scania);
-        Mechanics diesel = new Mechanics("Vin Diesel", "BlablaCar", hardy);
-        Mechanics bale = new Mechanics("Christian Bale","FordMotors", reeves);
+        Mechanics statham = new Mechanics("Jason Stathem", "BadCompany", gosling, bmw);
+        Mechanics diesel = new Mechanics("Vin Diesel", "BlablaCar", hardy, freighliner);
+        Mechanics bale = new Mechanics("Christian Bale","FordMotors", reeves, skoda);
         System.out.println(statham);
         System.out.println(diesel);
         System.out.println(bale);
@@ -130,7 +130,7 @@ public class Main {
         mechanicslist.add(statham);
         mechanicslist.add(diesel);
         mechanicslist.add(bale);
-        mechanicslist.add(new Mechanics<>("No name", "Unknown", null));
+        mechanicslist.add(new Mechanics("No name", "Unknown", gosling, skoda));
         System.out.println(mechanicslist);
 
         List<Transport> transportList = new ArrayList<>();
@@ -151,6 +151,12 @@ public class Main {
         scania.serviceAndRepair(678);
         mercedes.serviceAndRepair(20000);
         maz.serviceAndRepair(1800);
+        System.out.println();
+
+        /// Проверка метода вывода механика, водителя и авто
+        statham.infoAbout();
+        diesel.infoAbout();
+        bale.infoAbout();
 
 
     }
