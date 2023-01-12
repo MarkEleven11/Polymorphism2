@@ -4,14 +4,17 @@ import Drivers.Driver;
 import Transports.Passanger;
 import Transports.Transport;
 
-public class Mechanics <M extends Transport> {
+public class Mechanics <M,T extends Driver> {
     private String nameSurname;
     private String company;
     private M vechicle;
+    private T racer;
 
-    public Mechanics(String nameSurname, String company, M vechicle) {
+    public Mechanics(String nameSurname, String company, M vechicle, T racer) {
         this.nameSurname = nameSurname;
         this.company = company;
+        this.vechicle = vechicle;
+        this.racer = racer;
 
     }
 
@@ -39,16 +42,21 @@ public class Mechanics <M extends Transport> {
         this.vechicle = vechicle;
     }
 
-
-    public int serviceAndRepair(int distance) {
-        if (distance % 500 == 0) {
-            System.out.println("Настало время провести ТО");
-        } else if (distance > distance % 500) {
-            System.out.println("Ресурс автомобиля исчерпан, необходим ремонт.");
-        }
-        return distance;
+    public T getRacer() {
+        return racer;
     }
+
+    public void setRacer(T racer) {
+        this.racer = racer;
+    }
+
+
      public String toString () {
-        return "Механик " + getNameSurname() + " от компании " + getCompany() + " работает с автомобилем " + getVechicle();
+        return "Механик " + getNameSurname() + " от компании " + getCompany();
+    }
+
+
+    public void infoAboutVechicle() {
+        System.out.println("У водителя ");
     }
 }

@@ -31,6 +31,7 @@ public class Main {
         Cargo kamaz = new Cargo("KamAZ", "54907", 13.0, LoadCapacity.N2);
         Cargo hyndai = new Cargo("Hyndai", "Mighty", 3.9, LoadCapacity.N1);
         Cargo freighliner = new Cargo("Freighliner", "Cascadia", 12.9, LoadCapacity.N2);
+
         ///Распечатываем конструктор классов автомобилей
         System.out.println(scania);
         System.out.println(maz);
@@ -44,10 +45,12 @@ public class Main {
         System.out.println(hyndai);
         System.out.println(freighliner);
         System.out.println();
+
         ///Проверяем методы стоп и начать движение
         scania.movement();
         skoda.stop();
         System.out.println();
+
         ///Проверяем имплементированные методы
         bmw.pitStop(12);
         skoda.pitStop(20);
@@ -56,6 +59,7 @@ public class Main {
         mercedes.bestTime(12.48);
         maz.maxSpeed(92);
         System.out.println();
+
         ///Проводим проверку класса водитель и проверку методов
         DriverB gosling = new DriverB("Rayan 'Drive' Gosling", true, 15, "B");
         DriverC hardy = new DriverC("Tom 'MadMax' Hardy", true, 18, "C");
@@ -68,6 +72,7 @@ public class Main {
         hardy.movement();
         reeves.stop();
         System.out.println();
+
         ///Проверяем полиморфизм в конструкторе водителя и транспорта
         Driver<Cargo> tom = new Driver<>("Tom Hardy", true,18, freighliner);
         Driver<Bus> keanu = new Driver<>("Keanu Reeves", true,21, mercedes);
@@ -76,6 +81,7 @@ public class Main {
         keanu.toRace();
         tom.toRace();
         System.out.println();
+
         ///Проверяем метод printType с Enum.
         scania.printType();
         maz.printType();
@@ -89,27 +95,34 @@ public class Main {
         hyndai.printType();
         freighliner.printType();
         System.out.println();
+
         ///Проверка метода Диагностика
         kamaz.diagnostic(-5);
         toyota.diagnostic(41);
-        System.out.println("___________________");
+        System.out.println();
+
         ///Проверка Exeptions
         try {
             mercedes.diagnostic(0);
         } catch (ImmposiblePassDiagnostic e) {
             System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Перейти к диагностике следующего автомобиля");
         }
 
         try {
-            new DriverB("Mark Eleven", true, 2, " ");
+            new DriverB("Kanye West", true, 2, " ");
         } catch (NoAccesExeption e) {
             System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Водитель не допущен до соревнований");
         }
         System.out.println();
-        ///Работа с коллекциями
-        Mechanics statham = new Mechanics("Jason Stathem", "BadCompany",bmw);
-        Mechanics diesel = new Mechanics("Vin Diesel", "BlablaCar", freighliner);
-        Mechanics bale = new Mechanics("Christian Bale","FordMotors", kamaz);
+
+        ///Работа с коллекциями ArrayList
+        Mechanics statham = new Mechanics("Jason Stathem", "BadCompany", gosling, scania);
+        Mechanics diesel = new Mechanics("Vin Diesel", "BlablaCar", hardy);
+        Mechanics bale = new Mechanics("Christian Bale","FordMotors", reeves);
         System.out.println(statham);
         System.out.println(diesel);
         System.out.println(bale);
@@ -117,6 +130,8 @@ public class Main {
         mechanicslist.add(statham);
         mechanicslist.add(diesel);
         mechanicslist.add(bale);
+        mechanicslist.add(new Mechanics<>("No name", "Unknown", null));
+        System.out.println(mechanicslist);
 
         List<Transport> transportList = new ArrayList<>();
         transportList.add(scania);
@@ -129,6 +144,13 @@ public class Main {
         transportList.add(hyndai);
         transportList.add(kamaz);
         transportList.add(freighliner);
+        System.out.println(transportList);
+        System.out.println();
+
+        /// Проверка метода провести ТО и ремонт
+        scania.serviceAndRepair(678);
+        mercedes.serviceAndRepair(20000);
+        maz.serviceAndRepair(1800);
 
 
     }

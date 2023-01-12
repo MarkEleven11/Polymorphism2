@@ -82,8 +82,13 @@ public abstract class Transport implements Competing {
 
     public abstract int diagnostic(int cases) throws ImmposiblePassDiagnostic;
 
-    public void infoAboutVechicle() {
-        System.out.println("У водителя ");
-    }
 
+    public int serviceAndRepair(int distance) {
+        if (distance % 900 == 0) {
+            System.out.println("Настало время провести ТО");
+        } else if (distance % 5000 == 0) {
+            System.out.println("Ресурс автомобиля исчерпан, необходим плановый ремонт.");
+        } else System.out.println("Можете пользоваться автомобилем дальше");
+        return distance;
+    }
 }
