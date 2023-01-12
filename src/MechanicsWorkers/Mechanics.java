@@ -2,13 +2,14 @@ package MechanicsWorkers;
 
 import Drivers.Driver;
 import Transports.Passanger;
+import Transports.Transport;
 
-public class Mechanics <M extends Driver> {
+public class Mechanics <M extends Transport> {
     private String nameSurname;
     private String company;
     private M vechicle;
 
-    public Mechanics(String nameSurname, String company) {
+    public Mechanics(String nameSurname, String company, M vechicle) {
         this.nameSurname = nameSurname;
         this.company = company;
 
@@ -46,5 +47,8 @@ public class Mechanics <M extends Driver> {
             System.out.println("Ресурс автомобиля исчерпан, необходим ремонт.");
         }
         return distance;
+    }
+     public String toString () {
+        return "Механик " + getNameSurname() + " от компании " + getCompany() + " работает с автомобилем " + getVechicle();
     }
 }

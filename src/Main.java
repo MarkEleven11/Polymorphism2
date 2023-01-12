@@ -11,6 +11,7 @@ import MechanicsWorkers.Mechanics;
 import Transports.Bus;
 import Transports.Cargo;
 import Transports.Passanger;
+import Transports.Transport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,17 +90,45 @@ public class Main {
         freighliner.printType();
         System.out.println();
         ///Проверка метода Диагностика
-//        mercedes.diagnostic(0);
-//        kamaz.diagnostic(-5);
-//        toyota.diagnostic(41);
+        kamaz.diagnostic(-5);
+        toyota.diagnostic(41);
+        System.out.println("___________________");
+        ///Проверка Exeptions
+        try {
+            mercedes.diagnostic(0);
+        } catch (ImmposiblePassDiagnostic e) {
+            System.out.println(e.getMessage());
+        }
+
         try {
             new DriverB("Mark Eleven", true, 2, " ");
         } catch (NoAccesExeption e) {
             System.out.println(e.getMessage());
         }
+        System.out.println();
+        ///Работа с коллекциями
+        Mechanics statham = new Mechanics("Jason Stathem", "BadCompany",bmw);
+        Mechanics diesel = new Mechanics("Vin Diesel", "BlablaCar", freighliner);
+        Mechanics bale = new Mechanics("Christian Bale","FordMotors", kamaz);
+        System.out.println(statham);
+        System.out.println(diesel);
+        System.out.println(bale);
+        List<Mechanics> mechanicslist = new ArrayList<>();
+        mechanicslist.add(statham);
+        mechanicslist.add(diesel);
+        mechanicslist.add(bale);
 
-        List<Mechanics> list = new ArrayList<>();
-        Mechanics statham = new Mechanics("Jason Stathem", "BadCompany");
+        List<Transport> transportList = new ArrayList<>();
+        transportList.add(scania);
+        transportList.add(maz);
+        transportList.add(mercedes);
+        transportList.add(bmw);
+        transportList.add(skoda);
+        transportList.add(toyota);
+        transportList.add(freighliner);
+        transportList.add(hyndai);
+        transportList.add(kamaz);
+        transportList.add(freighliner);
 
 
     }
