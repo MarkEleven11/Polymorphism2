@@ -21,9 +21,6 @@ public class Driver <T extends Transport> {
         this.machine = machine;
     }
 
-    public Driver(String sFM, boolean license, int experience) {
-    }
-
     public String getsFM() {
         return sFM;
     }

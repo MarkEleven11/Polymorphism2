@@ -5,17 +5,16 @@ import Transports.Bus;
 import Transports.Passanger;
 import Transports.Transport;
 
-public class Mechanics <M extends Driver> {
+public class Mechanics {
     private String nameSurname;
     private String company;
-    private M racer;
     private Transport transport;
 
-    public Mechanics(String nameSurname, String company, M racer, Transport transport) {
+    public Mechanics(String nameSurname, String company, Transport transport) {
         this.nameSurname = nameSurname;
         this.company = company;
-        this.racer = racer;
         this.transport = transport;
+
 
     }
 
@@ -35,13 +34,6 @@ public class Mechanics <M extends Driver> {
         this.company = company;
     }
 
-    public M getRacer() {
-        return racer;
-    }
-
-    public void setRacer(M racer) {
-        this.racer = racer;
-    }
 
     public Transport getTransport() {
         return transport;
@@ -57,6 +49,6 @@ public class Mechanics <M extends Driver> {
 
 
     public void infoAbout() {
-        System.out.println(getRacer() + " имеет автомобиль " + getTransport() + ", который обслуживает механик " + getNameSurname());
+        System.out.println(  " имеет автомобиль " + getTransport() + ", который обслуживает механик " + getNameSurname());
     }
 }

@@ -14,7 +14,9 @@ import Transports.Passanger;
 import Transports.Transport;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws ImmposiblePassDiagnostic, NoAccesExeption {
@@ -61,9 +63,9 @@ public class Main {
         System.out.println();
 
         ///Проводим проверку класса водитель и проверку методов
-        DriverB gosling = new DriverB("Rayan 'Drive' Gosling", true, 15, "B");
-        DriverC hardy = new DriverC("Tom 'MadMax' Hardy", true, 18, "C");
-        DriverD reeves = new DriverD("Keanu 'Speed' Reeves", true, 21, "D");
+        DriverB gosling = new DriverB("Rayan 'Drive' Gosling", true, 15, bmw, "B");
+        DriverC hardy = new DriverC("Tom 'MadMax' Hardy", true, 19, freighliner, "C");
+        DriverD reeves = new DriverD("Keanu 'Speed' Reeves", true, 21, scania, "D");
         System.out.println(gosling);
         System.out.println(hardy);
         System.out.println(reeves);
@@ -111,7 +113,7 @@ public class Main {
         }
 
         try {
-            new DriverB("Kanye West", true, 2, " ");
+            new DriverB("Kanye West", true, 2, skoda, "B");
         } catch (NoAccesExeption e) {
             System.out.println(e.getMessage());
         } finally {
@@ -120,18 +122,22 @@ public class Main {
         System.out.println();
 
         ///Работа с коллекциями ArrayList
-        Mechanics statham = new Mechanics("Jason Stathem", "BadCompany", gosling, bmw);
-        Mechanics diesel = new Mechanics("Vin Diesel", "BlablaCar", hardy, freighliner);
-        Mechanics bale = new Mechanics("Christian Bale","FordMotors", reeves, skoda);
-        System.out.println(statham);
-        System.out.println(diesel);
-        System.out.println(bale);
-        List<Mechanics> mechanicslist = new ArrayList<>();
-        mechanicslist.add(statham);
-        mechanicslist.add(diesel);
-        mechanicslist.add(bale);
-        mechanicslist.add(new Mechanics("No name", "Unknown", gosling, skoda));
-        System.out.println(mechanicslist);
+//        Mechanics<Passanger> statham = new Mechanics("Jason Stathem", "BadCompany", bmw);
+//        Mechanics<DriverC> diesel = new Mechanics("Vin Diesel", "BlablaCar", freighliner);
+//        Mechanics<DriverD> bale = new Mechanics("Christian Bale","FordMotors", skoda);
+//        System.out.println(statham);
+//        System.out.println(diesel);
+//        System.out.println(bale);
+//        System.out.println();
+//        List<Mechanics> mechanicslist = new ArrayList<>();
+//        mechanicslist.add(statham);
+//        mechanicslist.add(diesel);
+//        mechanicslist.add(bale);
+//        mechanicslist.add(new Mechanics("No name", "Unknown", gosling, skoda));
+//        for(Mechanics mechanics : mechanicslist) {
+//            System.out.println(mechanics);
+//        }
+//        System.out.println();
 
         List<Transport> transportList = new ArrayList<>();
         transportList.add(scania);
@@ -144,7 +150,9 @@ public class Main {
         transportList.add(hyndai);
         transportList.add(kamaz);
         transportList.add(freighliner);
-        System.out.println(transportList);
+        for (Transport transport: transportList){
+            System.out.println(transport);
+        }
         System.out.println();
 
         /// Проверка метода провести ТО и ремонт
@@ -154,9 +162,21 @@ public class Main {
         System.out.println();
 
         /// Проверка метода вывода механика, водителя и авто
-        statham.infoAbout();
-        diesel.infoAbout();
-        bale.infoAbout();
+//        statham.infoAbout();
+//        diesel.infoAbout();
+//        bale.infoAbout();
+//        System.out.println();
+
+        /// Работа с Map
+//        Map<Transport, Mechanics> carsMechanics = new HashMap<>();
+//        carsMechanics.put(mercedes, bale);
+//        carsMechanics.put(freighliner, diesel);
+//        carsMechanics.put(bmw, statham);
+//        for (Map.Entry<Transport, Mechanics> carsMechanics1 : carsMechanics.entrySet()) {
+//            System.out.println(carsMechanics1.getKey() + " - " + carsMechanics1.getValue());
+//        }
+
+
 
 
     }

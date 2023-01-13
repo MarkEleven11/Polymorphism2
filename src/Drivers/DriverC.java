@@ -1,8 +1,9 @@
 package Drivers;
 
 import Exeptions.NoAccesExeption;
+import Transports.Cargo;
 
-public class DriverC extends Driver {
+public class DriverC extends Driver <Cargo>{
 
     private String categoryC;
 
@@ -10,8 +11,8 @@ public class DriverC extends Driver {
         return categoryC;
     }
 
-    public DriverC(String sFM, boolean license, int experience, String categoryC) throws NoAccesExeption {
-        super(sFM, license, experience);
+    public DriverC(String sFM, boolean license, int experience, Cargo cargo, String categoryC) throws NoAccesExeption {
+        super(sFM, license, experience, cargo);
         if (categoryC == null || categoryC.isEmpty() || categoryC.isBlank()) {
             throw new NoAccesExeption("Отсутсвует водительское удостоверение категории " + getCategoryC());
         } else this.categoryC = categoryC;
