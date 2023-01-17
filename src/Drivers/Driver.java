@@ -1,9 +1,8 @@
 package Drivers;
 
-import MechanicsWorkers.Mechanics;
 import Transports.Transport;
 
-public class Driver <T extends Transport> {
+public class Driver <T extends Transport<T>> {
     private String sFM;
 
     private boolean license;

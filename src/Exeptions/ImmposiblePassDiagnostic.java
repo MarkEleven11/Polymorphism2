@@ -4,15 +4,15 @@ import Transports.Transport;
 
 public class ImmposiblePassDiagnostic extends Exception {
 
-    private Transport transport;
+    private Transport<T> transport;
 
 
-    public ImmposiblePassDiagnostic(String message, Transport transport) {
+    public ImmposiblePassDiagnostic(String message, Transport<T> transport) {
         super(message);
         this.transport = transport;
     }
 
-    public Transport getTransport() {
+    public Transport<T> getTransport() {
         return transport;
     }
 }

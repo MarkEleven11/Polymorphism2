@@ -3,7 +3,7 @@ package Transports;
 import Enumerations.BodyType;
 import Exeptions.ImmposiblePassDiagnostic;
 
-public class Passanger extends Transport{
+public class Passanger extends Transport<T> {
 
     private BodyType bodyType;
 

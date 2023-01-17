@@ -3,7 +3,7 @@ package Transports;
 import Enumerations.LoadCapacity;
 import Exeptions.ImmposiblePassDiagnostic;
 
-public class Cargo extends Transport {
+public class Cargo extends Transport<T> {
 
     private LoadCapacity loadCapacity;
 

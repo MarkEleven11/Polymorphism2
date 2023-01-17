@@ -7,16 +7,13 @@ import Enumerations.Capacity;
 import Enumerations.LoadCapacity;
 import Exeptions.ImmposiblePassDiagnostic;
 import Exeptions.NoAccesExeption;
-import MechanicsWorkers.Mechanics;
 import Transports.Bus;
 import Transports.Cargo;
 import Transports.Passanger;
 import Transports.Transport;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws ImmposiblePassDiagnostic, NoAccesExeption {
@@ -121,7 +118,20 @@ public class Main {
         }
         System.out.println();
 
-        ///Работа с коллекциями ArrayList
+
+        List<Transport<?>> transportList = new ArrayList<>();
+        transportList.add(scania);
+        transportList.add(maz);
+        transportList.add(mercedes);
+        transportList.add(bmw);
+        transportList.add(skoda);
+        transportList.add(toyota);
+        transportList.add(kamaz);
+        transportList.add(hyndai);
+        transportList.add(freighliner);
+
+
+//        ///Работа с коллекциями ArrayList
 //        Mechanics<Passanger> statham = new Mechanics("Jason Stathem", "BadCompany", bmw);
 //        Mechanics<DriverC> diesel = new Mechanics("Vin Diesel", "BlablaCar", freighliner);
 //        Mechanics<DriverD> bale = new Mechanics("Christian Bale","FordMotors", skoda);
@@ -138,22 +148,6 @@ public class Main {
 //            System.out.println(mechanics);
 //        }
 //        System.out.println();
-
-        List<Transport> transportList = new ArrayList<>();
-        transportList.add(scania);
-        transportList.add(maz);
-        transportList.add(mercedes);
-        transportList.add(bmw);
-        transportList.add(skoda);
-        transportList.add(toyota);
-        transportList.add(freighliner);
-        transportList.add(hyndai);
-        transportList.add(kamaz);
-        transportList.add(freighliner);
-        for (Transport transport: transportList){
-            System.out.println(transport);
-        }
-        System.out.println();
 
         /// Проверка метода провести ТО и ремонт
         scania.serviceAndRepair(678);

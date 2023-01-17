@@ -2,7 +2,7 @@ package Transports;
 
 import Exeptions.ImmposiblePassDiagnostic;
 
-public abstract class Transport implements Competing {
+public abstract class Transport <T> implements Competing {
 
     private String brand;
 
