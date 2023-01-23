@@ -1,6 +1,10 @@
 package Transports;
 
+import Drivers.Driver;
 import Exeptions.ImmposiblePassDiagnostic;
+import MechanicsWorkers.Mechanics;
+
+import java.util.List;
 
 public abstract class Transport <T> implements Competing {
 
@@ -9,6 +13,8 @@ public abstract class Transport <T> implements Competing {
     private String model;
 
     private double engineVolume;
+
+    private List<Mechanics> thisAuto;
 
     public Transport(String brand, String model, double engineVolume) {
         this.brand = brand;

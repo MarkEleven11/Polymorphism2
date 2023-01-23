@@ -7,6 +7,7 @@ import Enumerations.Capacity;
 import Enumerations.LoadCapacity;
 import Exeptions.ImmposiblePassDiagnostic;
 import Exeptions.NoAccesExeption;
+import MechanicsWorkers.Mechanics;
 import Transports.Bus;
 import Transports.Cargo;
 import Transports.Passanger;
@@ -118,7 +119,7 @@ public class Main {
         }
         System.out.println();
 
-
+        //Создание списка автомобилей участвующих в гонке
         List<Transport<?>> transportList = new ArrayList<>();
         transportList.add(scania);
         transportList.add(maz);
@@ -129,25 +130,18 @@ public class Main {
         transportList.add(kamaz);
         transportList.add(hyndai);
         transportList.add(freighliner);
+        System.out.println(transportList);
 
 
-//        ///Работа с коллекциями ArrayList
-//        Mechanics<Passanger> statham = new Mechanics("Jason Stathem", "BadCompany", bmw);
-//        Mechanics<DriverC> diesel = new Mechanics("Vin Diesel", "BlablaCar", freighliner);
-//        Mechanics<DriverD> bale = new Mechanics("Christian Bale","FordMotors", skoda);
-//        System.out.println(statham);
-//        System.out.println(diesel);
-//        System.out.println(bale);
-//        System.out.println();
-//        List<Mechanics> mechanicslist = new ArrayList<>();
-//        mechanicslist.add(statham);
-//        mechanicslist.add(diesel);
-//        mechanicslist.add(bale);
-//        mechanicslist.add(new Mechanics("No name", "Unknown", gosling, skoda));
-//        for(Mechanics mechanics : mechanicslist) {
-//            System.out.println(mechanics);
-//        }
-//        System.out.println();
+
+        ///Работа с коллекциями ArrayList
+        Mechanics statham = new Mechanics("Jason Stathem", "BadCompany");
+        Mechanics diesel = new Mechanics("Vin Diesel", "BlablaCar");
+        Mechanics bale = new Mechanics("Christian Bale","FordMotors");
+
+        statham.addAuto(Passanger.class);
+        diesel.addAuto();
+
 
         /// Проверка метода провести ТО и ремонт
         scania.serviceAndRepair(678);

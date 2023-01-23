@@ -2,7 +2,7 @@ package Drivers;
 
 import Transports.Transport;
 
-public class Driver <T extends Transport<T>> {
+public class Driver <T extends Transport> {
     private String sFM;
 
     private boolean license;

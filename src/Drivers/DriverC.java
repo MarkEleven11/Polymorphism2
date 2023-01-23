@@ -3,7 +3,7 @@ package Drivers;
 import Exeptions.NoAccesExeption;
 import Transports.Cargo;
 
-public class DriverC extends Driver <Cargo>{
+public class DriverC extends Driver <Cargo> {
 
     private String categoryC;
 
