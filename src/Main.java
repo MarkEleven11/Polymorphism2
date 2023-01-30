@@ -136,7 +136,7 @@ public class Main {
         Mechanics diesel = new Mechanics("Vin Diesel", "BlablaCar");
         Mechanics bale = new Mechanics("Christian Bale","FordMotors");
 
-//        statham.addAuto(Bus.class);
+        statham.addAuto(Bus.class);
 
 
         /// Проверка метода провести ТО и ремонт List и Queue
