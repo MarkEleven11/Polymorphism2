@@ -117,7 +117,7 @@ public class Main {
         System.out.println();
 
         //Создание списка автомобилей участвующих в гонке
-        List<Transport<?>> transportList = new ArrayList<>();
+        List<Transport> transportList = new ArrayList<>();
         transportList.add(scania);
         transportList.add(maz);
         transportList.add(mercedes);
@@ -136,7 +136,19 @@ public class Main {
         Mechanics diesel = new Mechanics("Vin Diesel", "BlablaCar");
         Mechanics bale = new Mechanics("Christian Bale","FordMotors");
 
-//        statham.addAuto(Bus.class);
+        System.out.println();
+
+        statham.addAuto(Bus.class);
+        diesel.addAuto(Cargo.class);
+        bale.addAuto(Passanger.class);
+
+        statham.fixing(bmw);
+        statham.fixing(maz);
+        diesel.maintenance(mercedes);
+        diesel.maintenance(freighliner);
+        bale.fixing(toyota);
+        bale.maintenance(scania);
+        System.out.println();
 
 
         /// Проверка метода провести ТО и ремонт List и Queue

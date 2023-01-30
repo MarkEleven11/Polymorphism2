@@ -6,7 +6,7 @@ import MechanicsWorkers.Mechanics;
 
 import java.util.List;
 
-public abstract class Transport <T> implements Competing {
+public abstract class Transport implements Competing {
 
     private String brand;
 
