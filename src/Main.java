@@ -8,10 +8,7 @@ import Enumerations.LoadCapacity;
 import Exeptions.ImmposiblePassDiagnostic;
 import Exeptions.NoAccesExeption;
 import MechanicsWorkers.Mechanics;
-import Transports.Bus;
-import Transports.Cargo;
-import Transports.Passanger;
-import Transports.Transport;
+import Transports.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -139,33 +136,19 @@ public class Main {
         Mechanics diesel = new Mechanics("Vin Diesel", "BlablaCar");
         Mechanics bale = new Mechanics("Christian Bale","FordMotors");
 
-        statham.addAuto(Passanger.class);
-        diesel.addAuto();
+//        statham.addAuto(Bus.class);
 
 
-        /// Проверка метода провести ТО и ремонт
-        scania.serviceAndRepair(678);
-        mercedes.serviceAndRepair(20000);
-        maz.serviceAndRepair(1800);
-        System.out.println();
+        /// Проверка метода провести ТО и ремонт List и Queue
+        MaintanenceStation maintanenceStation = new MaintanenceStation();
+        maintanenceStation.addTransport(maz);
+        maintanenceStation.doingMaintrance();
+        maintanenceStation.addTransport(skoda);
+        maintanenceStation.doingMaintrance();
+        maintanenceStation.addTransport(hyndai);
+        maintanenceStation.doingMaintrance();
 
-        /// Проверка метода вывода механика, водителя и авто
-//        statham.infoAbout();
-//        diesel.infoAbout();
-//        bale.infoAbout();
-//        System.out.println();
-
-        /// Работа с Map
-//        Map<Transport, Mechanics> carsMechanics = new HashMap<>();
-//        carsMechanics.put(mercedes, bale);
-//        carsMechanics.put(freighliner, diesel);
-//        carsMechanics.put(bmw, statham);
-//        for (Map.Entry<Transport, Mechanics> carsMechanics1 : carsMechanics.entrySet()) {
-//            System.out.println(carsMechanics1.getKey() + " - " + carsMechanics1.getValue());
-//        }
-
-
-
+        //Работа с Map
 
     }
 }

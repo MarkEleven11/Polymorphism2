@@ -14,12 +14,20 @@ public abstract class Transport <T> implements Competing {
 
     private double engineVolume;
 
-    private List<Mechanics> thisAuto;
+    private List<Mechanics> carMechanics;
 
     public Transport(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
+    }
+
+    public List<Mechanics> getCarMechanics() {
+        return carMechanics;
+    }
+
+    public void setCarMechanics(List<Mechanics> carMechanics) {
+        this.carMechanics = carMechanics;
     }
 
     public String getBrand() {
@@ -89,12 +97,4 @@ public abstract class Transport <T> implements Competing {
     public abstract int diagnostic(int cases) throws ImmposiblePassDiagnostic;
 
 
-    public int serviceAndRepair(int distance) {
-        if (distance % 900 == 0) {
-            System.out.println("Настало время провести ТО");
-        } else if (distance % 5000 == 0) {
-            System.out.println("Ресурс автомобиля исчерпан, необходим плановый ремонт.");
-        } else System.out.println("Можете пользоваться автомобилем дальше");
-        return distance;
-    }
 }
