@@ -1,11 +1,15 @@
 package Transports;
 
+import MechanicsWorkers.Mechanics;
+
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 
 public class MaintanenceStation {
     private Queue<Transport> queue = new LinkedList<>();
-    
+
     public void addTransport(Transport transport) {
       if (transport instanceof Bus) {
           System.out.println("Автобусы не обслуживаются");

@@ -11,7 +11,9 @@ import MechanicsWorkers.Mechanics;
 import Transports.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws ImmposiblePassDiagnostic, NoAccesExeption {
@@ -159,8 +161,20 @@ public class Main {
         maintanenceStation.doingMaintrance();
         maintanenceStation.addTransport(hyndai);
         maintanenceStation.doingMaintrance();
+        System.out.println();
 
         //Работа с Map
+        Map<Transport, Mechanics> hashMap = new HashMap<>();
+        hashMap.put(scania, statham);
+        hashMap.put(maz, statham);
+        hashMap.put(mercedes, statham);
+        hashMap.put(bmw, bale);
+        hashMap.put(skoda, bale);
+        hashMap.put(toyota, bale);
+        hashMap.put(kamaz, diesel);
+        hashMap.put(hyndai, diesel);
+        hashMap.put(freighliner, diesel);
+        System.out.println(hashMap);
 
     }
 }
