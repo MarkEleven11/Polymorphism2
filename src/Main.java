@@ -10,10 +10,7 @@ import Exeptions.NoAccesExeption;
 import MechanicsWorkers.Mechanics;
 import Transports.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws ImmposiblePassDiagnostic, NoAccesExeption {
@@ -175,6 +172,27 @@ public class Main {
         hashMap.put(hyndai, diesel);
         hashMap.put(freighliner, diesel);
         System.out.println(hashMap);
+        System.out.println();
 
+        //Set, Iterator.
+        Set<Driver> hashset = new HashSet<>();
+        hashset.add(gosling);
+        hashset.add(hardy);
+        hashset.add(reeves);
+        hashset.add(new DriverB("Rick Ross", true, 19, toyota, "B"));
+        hashset.add(gosling);
+        for (Driver driver: hashset) {
+            System.out.println(driver);
+        }
+        System.out.println();
+
+        List<Driver> array = new ArrayList<>();
+        array.add(gosling);
+        array.add(hardy);
+        array.add(reeves);
+
+        Iterator<Driver> iterator = array.iterator();
+        while (iterator.hasNext())
+        System.out.println(iterator.next());
     }
 }
