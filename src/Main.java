@@ -117,7 +117,7 @@ public class Main {
         System.out.println();
 
         //Создание списка автомобилей участвующих в гонке
-        List<Transport<?>> transportList = new ArrayList<>();
+        List<Transport> transportList = new ArrayList<>();
         transportList.add(scania);
         transportList.add(maz);
         transportList.add(mercedes);
