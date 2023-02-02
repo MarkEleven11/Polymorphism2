@@ -135,8 +135,20 @@ public class Main {
         Mechanics statham = new Mechanics("Jason Stathem", "BadCompany");
         Mechanics diesel = new Mechanics("Vin Diesel", "BlablaCar");
         Mechanics bale = new Mechanics("Christian Bale","FordMotors");
+        System.out.println();
 
-//        statham.addAuto(Bus.class);
+       statham.addAuto(Bus.class);
+       diesel.addAuto(Cargo.class);
+       bale.addAuto(Passanger.class);
+
+       statham.fixing(scania);
+       statham.fixing(toyota);
+       diesel.maintenance(freighliner);
+       diesel.maintenance(maz);
+       bale.maintenance(bmw);
+       bale.fixing(mercedes);
+        System.out.println();
+
 
 
         /// Проверка метода провести ТО и ремонт List и Queue
