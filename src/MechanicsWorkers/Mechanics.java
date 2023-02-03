@@ -51,17 +51,4 @@ public class Mechanics {
             System.out.println(transport.getBrand() + transport.getModel() + " - следует провести ремонт.");
         } else System.out.println("Машина не может быть отремонтирована.");
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Mechanics)) return false;
-        Mechanics mechanics = (Mechanics) o;
-        return nameSurname.equals(mechanics.nameSurname) && company.equals(mechanics.company) && carTypes.equals(mechanics.carTypes);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nameSurname, company, carTypes);
-    }
 }

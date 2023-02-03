@@ -2,6 +2,8 @@ package Drivers;
 
 import Transports.Transport;
 
+import java.util.Objects;
+
 public class Driver <T extends Transport> {
     private String sFM;
 
@@ -52,4 +54,16 @@ public class Driver <T extends Transport> {
         System.out.println("Водитель " + getsFM() + " управляет автомобилем " + getMachine() + " и будет учавствовать в заезде.");
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver<?> driver = (Driver<?>) o;
+        return license == driver.license && experience == driver.experience && Objects.equals(sFM, driver.sFM) && Objects.equals(machine, driver.machine);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sFM, license, experience, machine);
+    }
 }

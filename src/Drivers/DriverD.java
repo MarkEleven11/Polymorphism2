@@ -3,6 +3,8 @@ package Drivers;
 import Exeptions.NoAccesExeption;
 import Transports.Bus;
 
+import java.util.Objects;
+
 public class DriverD extends Driver <Bus> {
 
     private String categoryD;
@@ -20,5 +22,19 @@ public class DriverD extends Driver <Bus> {
 
     public String toString() {
         return "Водитель " + getsFM() + " с наличием прав категории " + getCategoryD();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        DriverD driverD = (DriverD) o;
+        return Objects.equals(categoryD, driverD.categoryD);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), categoryD);
     }
 }

@@ -97,17 +97,6 @@ public abstract class Transport implements Competing {
 
     public abstract int diagnostic(int cases) throws ImmposiblePassDiagnostic;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Transport)) return false;
-        Transport transport = (Transport) o;
-        return Double.compare(transport.engineVolume, engineVolume) == 0 && brand.equals(transport.brand) && model.equals(transport.model) && carMechanics.equals(transport.carMechanics);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(brand, model, engineVolume, carMechanics);
-    }
 
 }
