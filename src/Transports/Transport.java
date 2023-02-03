@@ -109,4 +109,5 @@ public abstract class Transport implements Competing {
     public int hashCode() {
         return Objects.hash(brand, model, engineVolume, carMechanics);
     }
+
 }
