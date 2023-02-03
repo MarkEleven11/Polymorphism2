@@ -4,6 +4,7 @@ import Transports.Transport;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Mechanics {
     private String nameSurname;
@@ -51,5 +52,16 @@ public class Mechanics {
         } else System.out.println("Машина не может быть отремонтирована.");
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Mechanics)) return false;
+        Mechanics mechanics = (Mechanics) o;
+        return nameSurname.equals(mechanics.nameSurname) && company.equals(mechanics.company) && carTypes.equals(mechanics.carTypes);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(nameSurname, company, carTypes);
+    }
 }
