@@ -172,6 +172,7 @@ public class Main {
         hashMap.put(hyndai, diesel);
         hashMap.put(freighliner, diesel);
         System.out.println(hashMap);
+
         System.out.println();
 
 

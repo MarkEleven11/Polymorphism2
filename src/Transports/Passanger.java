@@ -3,6 +3,8 @@ package Transports;
 import Enumerations.BodyType;
 import Exeptions.ImmposiblePassDiagnostic;
 
+import java.util.Objects;
+
 public class Passanger extends Transport {
 
     private BodyType bodyType;
@@ -34,5 +36,19 @@ public class Passanger extends Transport {
             System.out.println(getBrand() + " " + getModel() +" диагностика не требуется");
         } else System.out.println(getBrand() + " " + getModel() + " требуется пройти диагностику");
         return cases;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Passanger passanger = (Passanger) o;
+        return bodyType == passanger.bodyType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), bodyType);
     }
 }

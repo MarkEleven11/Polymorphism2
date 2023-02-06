@@ -3,6 +3,8 @@ package Transports;
 import Enumerations.LoadCapacity;
 import Exeptions.ImmposiblePassDiagnostic;
 
+import java.util.Objects;
+
 public class Cargo extends Transport {
 
     private LoadCapacity loadCapacity;
@@ -36,5 +38,18 @@ public class Cargo extends Transport {
         return cases;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Cargo cargo = (Cargo) o;
+        return loadCapacity == cargo.loadCapacity;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), loadCapacity);
+    }
 }
 

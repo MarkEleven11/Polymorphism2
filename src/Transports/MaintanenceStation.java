@@ -2,10 +2,7 @@ package Transports;
 
 import MechanicsWorkers.Mechanics;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 public class MaintanenceStation {
     private Queue<Transport> queue = new LinkedList<>();
@@ -24,4 +21,16 @@ public class MaintanenceStation {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MaintanenceStation that = (MaintanenceStation) o;
+        return Objects.equals(queue, that.queue);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(queue);
+    }
 }
